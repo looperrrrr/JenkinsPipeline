@@ -2,7 +2,7 @@ node {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/looperrrrr/JSF_JDBCIntegration.git'
+      git 'http://192.168.1.200:9091/loperf/myjsf.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
@@ -12,7 +12,7 @@ node {
       // Run the maven build
       if (isUnix()) {
           // sh 'mvn -f otherdirectory/pom.xml clean install'
-         sh "'${mvnHome}/bin/mvn' -f test_srv/pom.xml clean package"
+         sh "'${mvnHome}/bin/mvn' -f jsf_jdbcPipeline/pom.xml clean package"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
