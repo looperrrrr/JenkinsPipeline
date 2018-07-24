@@ -25,7 +25,7 @@ node {
       stage('Deploy on server') {
       //junit '**/target/surefire-reports/TEST-*.xml'
      //archive 'target/*.war'
-    // sh "scp '/var/lib/jenkins/workspace/pipeline_build_etc/test_srv/target/test_srv.war' root@192.168.1.203:/opt/tomcat/webapps"
+     sh "scp '/var/lib/jenkins/workspace/jsf_jdbcPipeline/target/JSF_JDBCIntegration-1.0-SNAPSHOT.war' root@192.168.1.203:/opt/tomcat/webapps"
    //sh 'ssh root@192.168.1.203 ls /'
     echo 'Deploy'
           
