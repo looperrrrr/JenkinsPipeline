@@ -1,8 +1,8 @@
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
-      // Get some code from a GitLab repository
-      git 'http://192.168.1.200:9091/all/servlet_app.git'
+      // Get some code from a GitHub repository
+      git 'https://github.com/looperrrrr/JSF_JDBCIntegration.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
@@ -25,9 +25,9 @@ node {
       stage('Deploy on server') {
       //junit '**/target/surefire-reports/TEST-*.xml'
      //archive 'target/*.war'
-     sh "scp '/var/lib/jenkins/workspace/pipeline_build_etc/test_srv/target/test_srv.war' root@192.168.1.203:/opt/tomcat/webapps"
+    // sh "scp '/var/lib/jenkins/workspace/pipeline_build_etc/test_srv/target/test_srv.war' root@192.168.1.203:/opt/tomcat/webapps"
    //sh 'ssh root@192.168.1.203 ls /'
-
+    echo 'Deploy'
           
       }
 }
