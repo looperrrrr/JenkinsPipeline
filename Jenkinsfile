@@ -12,7 +12,7 @@ node {
       // Run the maven build
       if (isUnix()) {
           // sh 'mvn -f otherdirectory/pom.xml clean install'
-         sh "'${mvnHome}/bin/mvn' -f /var/lib/jenkins/workspace/jsf_jdbcPipeline/pom.xml clean package"
+         sh "'${mvnHome}/bin/mvn' -f ../jsf_jdbcPipeline/pom.xml clean package"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
